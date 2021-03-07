@@ -34,5 +34,22 @@ module.exports = {
       },
       __key: "pages",
     },
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        path: `${__dirname}/news`,
+        name: "news",
+      },
+    },
+    // contenful からデータを取ってくるプラグイン
+    {
+      resolve: `gatsby-source-contentful`,
+      options: {
+        spaceId: '**********',
+        accessToken: '**********',
+      },
+    },
+    // マークダウンを扱うプラグイン
+    "gatsby-transformer-remark",
   ],
 };
